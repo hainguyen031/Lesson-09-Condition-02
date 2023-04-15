@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập cấu trúc điều kiện 02</title>
+</head>
+<body>
+    <p>Bài 1: Chuyển từ độ C sang độ F</p>
+    <label for="doC">Nhập độ C </label> <input type="text" id="doC">
+    <button type="button" onclick="chuyenDoi()">Chuyển đổi</button>
+    <p id="result">Result: </p>
+    <hr>
+
+    <p>Bài 2: Chuyển từ mét sang feet</p>
+    <label for="met">Nhập mét </label> <input type="text" id="met">
+    <button type="button" onclick="chuyenDoi2()">Chuyển đổi</button>
+    <p id="result2">Result: </p>
+    <hr>
+
+    <p>Bài 3: Tính diện tích hình vuông khi biết cạnh a</p>
+    <label for="hv">Nhập chiều dài canh a </label> <input type="text" id="hv">
+    <button type="button" onclick="chuyenDoi3()">Tính</button>
+    <p id="result3">Result: </p>
+    <hr>
+
+    <p>Bài 4: Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b</p>
+    <label for="hcn1">Nhập chiều dài canh a </label> <input type="text" id="hcn1"> <br> <br>
+    <label for="hcn2">Nhập chiều dài canh b </label> <input type="text" id="hcn2">
+    <button type="button" onclick="dienTichHCN()">Tính</button>
+    <p id="result4">Result: </p>
+    <hr>
+
+    <p>Bài 5:  Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b</p>
+    <label for="tg1">Nhập chiều dài canh a </label> <input type="text" id="tg1"> <br> <br>
+    <label for="tg2">Nhập chiều dài canh b </label> <input type="text" id="tg2">
+    <button type="button" onclick="dienTichTG()">Tính</button>
+    <p id="result5">Result: </p>
+    <hr>
+
+    <p>Bài 6: Giải phương trình bậc 1</p>
+    <p>ax + b = 0</p>
+    <label for="a6">Nhập a </label> <input type="text" id="a6"> <br> <br>
+    <label for="b6">Nhập b </label> <input type="text" id="b6">
+    <button type="button" onclick="giaiPt6()">Tính</button>
+    <p id="result6">Result: </p>
+    <hr>
+
+    <p>Bài 7: Giải phương trình bậc 2</p>
+    <p>ax² + bx + c = 0</p>
+    <label for="a7">Nhập a </label> <input type="text" id="a7"> <br> <br>
+    <label for="b7">Nhập b </label> <input type="text" id="b7"> <br> <br>
+    <label for="c7">Nhập c </label> <input type="text" id="c7">
+    <button type="button" onclick="giaiPt7()">Tính</button>
+    <p id="result7">Result: </p>
+    <hr>
+
+    <p>Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.</p>
+    <label for="age">Age :</label><input type="text" id="age">
+    <button type="button" onclick="check()">Kiểm tra</button>
+    <p id="result8">Result: </p>
+    <hr>
+
+    <p>Bài 9:  Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác.</p>
+    <label for="a9">Nhập a </label> <input type="text" id="a9"> <br> <br>
+    <label for="b9">Nhập b </label> <input type="text" id="b9"> <br> <br>
+    <label for="c9">Nhập c </label> <input type="text" id="c9">
+    <button type="button" onclick="kiemTra()">Tính</button>
+    <p id="result9">Result: </p>
+    <hr>
+
+    <p>Bài 10: Viết chương trình tính giá điện.</p>
+    <label for="sodien">Nhập số điện tháng này: </label> <input type="text" id="sodien">
+    <button type="button" onclick="tinhGiaDien()">Tính</button>
+    <p id="result10">Result: </p>
+    <hr>
+
+
+    <p>Bài 11: Viết chương trình tính thuế thu nhập cá nhân.</p>
+    <label for="thunhap">Nhập thu nhập cá nhân hiện tại: </label> <input type="text" id="thunhap">
+    <button type="button" onclick="tinhthue()">Tính</button>
+    <p id="result11">Result: </p>
+    <hr>
+
+
+    <p>Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</p>
+    <label for="a12">Nhập số tiền vay (VNĐ) </label> <input type="number" id="a12"> <br> <br>
+    <label for="b12">Nhập số tháng vay (tháng)</label> <input type="number" id="b12"> <br> <br>
+    <label for="c12">Nhập lãi xuất vay (%)</label> <input type="number" id="c12">
+    <button type="button" onclick="tinhlaivay()">Tính</button>
+    <p id="result12">Result: </p>
+    <p id="result13"></p>
+    <hr>
+
+
+    
+    <script>
+        //Bai 1
+        function chuyenDoi() {
+            let c = document.getElementById('doC').value;
+            let res = document.getElementById('result');
+            if (isNaN(c)) {
+                res.innerHTML ='Vui lòng nhập số.';
+            } else {
+                res.innerHTML ='Result: ' + (c* 9/5 +32) +'F';
+            }
+        }
+
+        //Bai 2
+        function chuyenDoi2() {
+            let m = document.getElementById('met').value;
+            if (isNaN(m)) {
+                document.getElementById('result2').innerHTML="Vui lòng nhập số mét";
+            } else {
+                document.getElementById('result2').innerHTML="Result: " + m*3.2808 +"m";
+            }
+        }
+
+        //Bai 3
+        function chuyenDoi3() {
+            let a = document.getElementById('hv').value;
+            if (isNaN(a)) {
+                document.getElementById('result3').innerHTML="Vui lòng nhập số chiều dài cạnh hình vuông";
+            } else {
+                document.getElementById('result3').innerHTML="Result: " + a*a;
+            }
+        }
+
+        //Bai 4
+        function dienTichHCN() {
+            let a = document.getElementById('hcn1').value;
+            let b = document.getElementById('hcn2').value;
+            if (isNaN(a) || isNaN(b)) {
+                document.getElementById('result4').innerHTML="Vui lòng nhập số chiều dài cạnh hình chữ nhật";
+            } else {
+                document.getElementById('result4').innerHTML="Result: " + a*b;
+            }
+        }
+
+        //Bai 5
+        function dienTichTG() {
+            let a = document.getElementById('tg1').value;
+            let b = document.getElementById('tg2').value;
+            if (isNaN(a) || isNaN(b)) {
+                document.getElementById('result5').innerHTML="Vui lòng nhập số chiều dài cạnh hình tam giác";
+            } else {
+                document.getElementById('result5').innerHTML="Result: " + (a*b/2);
+            }
+        }
+    
+        //Bai 6
+        function giaiPt6() {
+            let a = document.getElementById('a6').value;
+            let b = document.getElementById('b6').value;
+            if (isNaN(a) || isNaN(b)) {
+                document.getElementById('result6').innerHTML="Dữ liệu không hợp lệ";
+            } else if (a==0 && b==0) {
+                document.getElementById('result6').innerHTML="Phương trình vô số nghiệm";
+            } else if (a!=0 && b==0) {
+                document.getElementById('result6').innerHTML="Phương trình có nghiệm x=0";
+            } else if (a==0 && b!=0) {
+                document.getElementById('result6').innerHTML="Phương trình vô nghiệm";
+            } else {
+                document.getElementById('result6').innerHTML="Phương trình có nghiệm x=" +(-b/a);
+            }
+        }
+
+        //Bai 7
+        function giaiPt7() {
+            let a = document.getElementById('a7').value;
+            let b = document.getElementById('b7').value;
+            let c = document.getElementById('c7').value;
+            let res = document.getElementById('result7');
+            if (isNaN(a)||isNaN(b)||isNaN(c)) {
+                res.innerHTML = "Dữ liệu không hợp lệ"
+            } else {
+                let delta = b*b -4*a*c;
+                if (delta == 0) {
+                    res.innerHTML = `Phương trình có nghiệm kép ${-b/(2*a)}`;
+                } else if (delta < 0) {
+                    res.innerHTML = `Phương trình vô nghiệm`;
+                } else {
+                    let x1=(-b-Math.sqrt(delta))/(2*a);
+                    let x2=(-b+Math.sqrt(delta))/(2*a);
+                    res.innerHTML = `Phương trình có 2 nghiệm phân biệt : ${x1} ;  ${x2}`
+                }
+            }
+        }
+
+        //Bài 8
+        function check() {
+            let a = document.getElementById('age').value;
+            if (isNaN(a)) {
+                document.getElementById('result8').innerHTML="Dữ liệu không hợp lệ";
+            } else if (a>120 || a<0) {
+                document.getElementById('result8').innerHTML="Không phải tuổi người";
+            } else {
+                document.getElementById('result8').innerHTML="Tuổi của một người";
+            }
+        }
+
+        //Bai 9
+        function kiemTra() {
+            let a = document.getElementById('a9').value;
+            let b = document.getElementById('b9').value;
+            let c = document.getElementById('c9').value;
+            if (isNaN(a)||isNaN(b)||isNaN(c)) {
+                document.getElementById('result9').innerHTML="Dữ liệu không hợp lệ";
+            } else if ((a>0 & b>0 & c>0) && ((a+b>c) || (a+c>b) || (b+c>a))) {
+                document.getElementById('result9').innerHTML="Dữ liệu là các cạnh của một hình tam giác";
+            } else {
+                document.getElementById('result9').innerHTML="Dữ liệu không phải là các cạnh của một hình tam giác";
+            }
+        }
+
+        //Bai 10
+        function tinhGiaDien() {
+            let soDien = document.getElementById('sodien').value;
+            let giaDien = 0;
+            if (isNaN(soDien)) {
+                document.getElementById('result10').innerHTML="Dữ liệu không hợp lệ";
+            } else if (soDien<=50) {
+                giaDien = soDien * 1500;
+            }else if (soDien > 50 && soDien <= 100) {
+                giaDien = 50 * 1500 + (soDien - 50) * 2000;
+            } else if (soDien > 100 && soDien <= 200) {
+                giaDien = 50 * 1500 + 50 * 2000 + (soDien - 100) * 2500;
+            } else if (soDien > 200 && soDien <= 300) {
+                giaDien = 50 * 1500 + 50 * 2000 + 100 * 2500 + (soDien - 200) * 3000;
+            } else {
+                giaDien = 50 * 1500 + 50 * 2000 + 100 * 2500 + 100 * 3000 + (soDien - 300) * 3500;
+            }
+            document.getElementById('result10').innerHTML="Giá tiền điện của " +soDien+ " kWh là: " +giaDien+ " VNĐ";
+        }
+
+        //Bal 11
+        function tinhthue() {
+            let thuNhap = document.getElementById('thunhap').value;
+            let thue = 0;
+            if (isNaN(thuNhap)) {
+                document.getElementById('result11').innerHTML="Dữ liệu không hợp lệ";
+            } else if (thuNhap <= 5000000) {
+                thue = 0;
+            } else if (thuNhap > 5000000 && thuNhap <= 10000000) {
+                thue = (thuNhap-5000000)*0.1;
+            } else if (thuNhap > 10000000 && thuNhap <= 18000000) {
+                thue = 500000 + (thuNhap - 10000000) * 0.15;
+            } else if (thuNhap > 18000000 && thuNhap <= 32000000) {
+                thue = 1700000 + (thuNhap - 18000000) * 0.2;
+            } else if (thuNhap > 32000000 && thuNhap <= 52000000) {
+                thue = 3700000 + (thuNhap - 32000000) * 0.25;
+            } else if (thuNhap > 52000000 && thuNhap <= 80000000) {
+                thue = 6700000 + (thuNhap - 52000000) * 0.3;
+            } else {
+                thue = 14900000 + (thuNhap - 80000000) * 0.35;
+            }
+            document.getElementById('result11').innerHTML="Thuế thu nhập của " +thuNhap+ "VNĐ là: " +thue+ "VNĐ";
+        }
+
+        //Bai 12
+        function tinhlaivay() {
+            let tienVay = document.getElementById('a12').value;
+            let thangVay = document.getElementById('b12').value;
+            let laiXuat = document.getElementById('c12').value;
+            let tongTienLai = 0;
+            let tienLaiHangThang = tienVay * laiXuat;
+            for (var i = 0; i <= thangVay; i++) {
+                if (i == 0) {
+                tongTienLai += tienLaiHangThang;
+                } else {
+                tongTienLai += (tienVay + tongTienLai) * laiXuat;
+                }
+            }
+            let tongTien = tienVay + tongTienLai;
+        document.getElementById('result12').innerHTML="Tổng tiền:" + tongTien + "VNĐ";
+        document.getElementById('result13').innerHTML="Tổng tiền lãi:" +tongTienLai +"VNĐ";
+        }
+    </script>
+</body>
+</html>
