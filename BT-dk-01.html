@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="bt1()">Bài 1</button>
+    <label for="b1">Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không</label> <br>
+    <br>
+    <button type="button" onclick="bt2()">Bài 2</button>
+    <label for="b2">Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.</label> <br>
+    <br>
+    <button type="button" onclick="bt3()">Bài 3</button>
+    <label for="b3">Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0</label> <br>
+    <br>
+    <button type="button" onclick="bt4()">Bài 4</button>
+    <label for="b4">Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó</label> <br>
+    <br>
+    <button type="button" onclick="bt5()">Bài 5</button>
+    <label for="b5">Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ</label> <br>
+    <br>
+    <button type="button" onclick="bt6()">Bài 6</button>
+    <label for="b6">Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng</label> <br>
+    <br>
+    <button type="button" onclick="bt7()">Bài 7</button>
+    <label for="b7">Tính cước điện thoại cho một hộ gia đình với các thông số đã cho</label> <br>
+    <br>
+    <script>
+        //Bai 1
+        function bt1() {
+        let a = +prompt("Nhap a");
+        let b = +prompt("Nhap b");
+        if (a%b==0) {
+            alert("a= "+a+ " chia hết cho b= " +b);
+        } else {alert("a= "+a+ " không chia hết cho b= " +b);}
+        }
+
+        //Bai 2
+        function bt2() {
+            let age = +prompt('Nhập tuổi');
+            if (age >= 15) {
+                alert('Đủ tuổi vào lớp 10');
+            }   else { alert('Không đủ tuổi vào lớp 10')}
+        }
+
+        //Bai 3
+        function bt3() {
+            let a = +prompt('Nhập số bất kỳ');
+            if (a>0) {
+                alert('Lớn hơn 0')
+            }   else {alert('Nhỏ hơn 0')};
+        }
+
+        //Bai 4
+        function bt4() {
+            let a = +prompt('Nhập a');
+            let b = +prompt('Nhập b');
+            let c = +prompt('Nhập c');
+            if (a>b) {
+                if (a>c) {
+                    alert('a= '+a+ ' là số lớn nhất');
+                }   else {alert('c= '+c+ ' là số lớn nhất');}
+            } else if (b>c) {
+                alert('b= '+b+ ' là số lớn nhất');
+            } else {alert('c= '+c+ ' là số lớn nhất');}
+        }
+
+        //Bai 5
+        function bt5() {
+            let kt= +prompt('Điểm bài kiểm tra:');
+            let gk= +prompt('Điểm thi giữa kỳ');
+            let ck= +prompt('Điểm thi cuối kỳ');
+            let diem= (kt + gk + ck)/3;
+            if (diem>=8) {
+                alert('Học sinh giỏi');
+            } else if (diem >=6.5) {
+                alert('Học sinh khá');
+            } else {
+                alert('Học sinh yếu');
+            }
+        }
+
+        //Bai 6
+        function bt6() {
+            let x = +prompt('Doanh thu tháng:');
+            if (x>=100) {
+                alert('Hoa hồng nhận được là 20%');
+            } else if (x>=70) {
+                alert('Hoa hồng nhận được là 15%');
+            } else if (x>=40) {
+                alert('Hoa hồng nhận được là 10%');
+            } else {
+                alert('Hoa hồng nhận được là 5%');
+            }
+        }
+
+        //Bai 7
+        function bt7() {
+            let x = +prompt('số phút gọi tháng này là:');
+            if (x>500) {
+                alert('số cước điện thoại bạn phải trả là: ' + x*200 +'VND');
+            } else if (x>200) {
+                alert('số cước điện thoại bạn phải trả là: ' + x*300+'VND');
+            } else {
+                alert('số cước điện thoại bạn phải trả là: ' + x*400+'VND');
+            }
+        }
+    </script>
+</body>
+</html>
